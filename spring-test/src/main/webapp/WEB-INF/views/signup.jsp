@@ -19,7 +19,7 @@
 		<label for="female">여</label>
 		<input type="radio" name="gender" value="male" id="male">
 		<label for="male">남</label><br>
-		<button type="button" id="btnOk">회원가입</button>
+		<button type="submit" id="btnOk">회원가입</button>
 	</form>
 	<script type="text/javascript">
 		var dup=0;
