@@ -1,4 +1,4 @@
-package kr.green.springtest.controller;
+package kr.green.springtest;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -24,5 +24,4 @@ public class MainController {
 		System.out.println("id : " + id +" pw : " + pw);
 		return "redirect:/";
 	}
-	
 }
