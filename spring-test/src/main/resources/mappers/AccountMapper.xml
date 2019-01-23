@@ -6,4 +6,7 @@
 	<select id="getAccount" resultType="kr.green.springtest.vo.AccountVo">
 		select * from account where id = #{id}
 	</select>
+	<insert id="setAccount">
+		insert into account(id, pw, email, gender) values(#{user.id}, #{user.pw}, #{user.email}, #{user.gender})
+	</insert>	
 </mapper>
