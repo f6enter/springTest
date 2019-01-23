@@ -1,4 +1,4 @@
-package kr.green.controller;
+package kr.green.springtest.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
