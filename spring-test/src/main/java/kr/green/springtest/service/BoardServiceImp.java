@@ -45,7 +45,7 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public boolean modifyBoard(BoardVo board, AccountVo user) {
 		BoardVo oriBoard = boardDao.getBoard(board.getId());
-		System.out.println(board.getId());
+		System.out.println(oriBoard);
 
 		if(oriBoard == null || !oriBoard.getWriter().equals(user.getId()))
 			return false;

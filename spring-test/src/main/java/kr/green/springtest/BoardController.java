@@ -42,10 +42,10 @@ public class BoardController {
 	@RequestMapping(value="/bbs/detail", method=RequestMethod.GET)
 	public String detailGet(Model model, Integer id) {
 		// 1. 전달받은 id값을 콘솔에 출력
-		System.out.println(id);
+		//System.out.println(id);
 		// 2. 서비스에서 id값을 이용하여 해당 게시글을 가져오는 메소드 호출
 		BoardVo board = boardService.detailBoard(id);
-		System.out.println(board);
+		//System.out.println(board);
 		if(board == null)
 			return "redirect:/bbs/list";
 		//boardService.read(board);
@@ -80,7 +80,7 @@ public class BoardController {
 	public String modifyPost(Model model, BoardVo board, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		AccountVo user = (AccountVo)session.getAttribute("user");
-		System.out.println("id:"+board.getId());
+		//System.out.println("id:"+board.getId());
 		if(!boardService.modifyBoard(board, user))
 			return "redirect:/bbs/list";
 		
