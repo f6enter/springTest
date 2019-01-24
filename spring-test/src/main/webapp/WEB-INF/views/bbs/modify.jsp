@@ -8,21 +8,22 @@
 <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/bootstrap.css">
 </head>
 <body>
-	<h1>게시글 등록</h1>
-	<form action="<%=request.getContextPath()%>/bbs/register" method="post">
+	<h1>게시글 수정</h1>
+	<form action="<%=request.getContextPath()%>/bbs/modify" method="post">
+		<input type="text" value="${board.id}" name="id">
 		<div class="form-group">
 		  <label for="title">제목 : </label>
-		  <input type="text" class="form-control" id="title" name="title">
+		  <input type="text" class="form-control" id="title" name="title" value="${board.title}">
 		</div>
 		<div class="form-group">
 		  <label for="writer">작성자 : </label>
-		  <input type="text" class="form-control" id="writer" name="writer" readonly value="${user.id}">
+		  <input type="text" class="form-control" id="writer" name="writer" readonly value="${board.writer}">
 		</div>
 		<div class="form-group">
 		  <label for="content">내용 : </label>
-		  <textarea class="form-control" id="content" name="content"></textarea>
+		  <textarea class="form-control" id="content" name="content">${board.content}</textarea>
 		</div>
-		<button class="btn btn-outline-primary">등록</button>
+		<button class="btn btn-outline-primary">완료</button>
 	</form>
 	
 </body>

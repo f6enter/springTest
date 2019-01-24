@@ -15,8 +15,10 @@ public class UnauthInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 		Object user = session.getAttribute("user"); // 값이 있는지 없는지 확인만 하기 때문에 형변환 하지 않고 Object사용
 		//AccoutnVo user = (AccoutnVo)session.getAttribute("user");
-		if(user != null) {
+		if(user != null) { 
+			// 회원이면 /bbs/list로
 			response.sendRedirect(request.getContextPath()+"/bbs/list");
+			return false;
 		}
 		return true;
 	}

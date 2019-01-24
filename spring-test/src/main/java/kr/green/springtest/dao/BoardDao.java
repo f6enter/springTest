@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import kr.green.springtest.vo.AccountVo;
 import kr.green.springtest.vo.BoardVo;
 
 public interface BoardDao {
@@ -12,4 +13,9 @@ public interface BoardDao {
 
 	public void setBoard(@Param("board")BoardVo board);
 
+	//public BoardVo getReads(Integer id);
+
+	public BoardVo getBoard(@Param("id")Integer id);
+
+	public void updateBoard(@Param("board")BoardVo board);
 }

@@ -28,7 +28,7 @@ public class MainController {
 	public String homePost(Model model, AccountVo loginInfo) {
 		AccountVo user = accountService.signin(loginInfo);
 		model.addAttribute("user", user);
-		System.out.println(user);
+		//System.out.println(user);
 		return "redirect:/";
 	}
 	
