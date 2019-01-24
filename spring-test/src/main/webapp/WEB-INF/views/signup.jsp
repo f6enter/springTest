@@ -19,7 +19,7 @@
 		<label for="female">여</label>
 		<input type="radio" name="gender" value="male" id="male">
 		<label for="male">남</label><br>
-		<button type="submit" id="btnOk">회원가입</button>
+		<button type="button" id="btnOk">회원가입</button>
 	</form>
 	<script type="text/javascript">
 		var dup=0;
@@ -55,6 +55,7 @@
 	    		alert("중복된 아이디입니다. 다른 아이디를 입력하세요.");
 	    		return false;
 	    	}
+	    	$("#form").submit();
 	    	return true;
 	    });
 	</script>
