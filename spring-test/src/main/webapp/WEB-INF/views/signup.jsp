@@ -7,19 +7,27 @@
 <title>signup</title>
 <script src="//code.jquery.com/jquery-3.3.1.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/bootstrap.css">
+<style>
+	.width {width: 100px; color:red; display:inline-block;}
+	.margin1 {margin-left:105px;}
+</style>
 </head>
 <body>
 	<form action="<%= request.getContextPath()%>/signup" method="post" id="form">
-		아이디 <input type="text" name="id" id="id">
+		<label class="width">아이디</label>
+		<input type="text" name="id" id="id">
 		<button id="dup" type="button">중복확인</button><br>
-		비밀번호 <input type="password" name="pw"><br>
-		이메일  <input type="email" name="email"><br>
-		성별 
+		<label class="width">비밀번호</label>
+		<input type="password" name="pw"><br>
+		<label class="width">이메일</label>
+		<input type="email" name="email"><br>
+		<label class="width">성별</label>
 		<input type="radio" name="gender" value="female" id="female" checked>
 		<label for="female">여</label>
 		<input type="radio" name="gender" value="male" id="male">
 		<label for="male">남</label><br>
-		<button type="button" id="btnOk">회원가입</button>
+		<div></div>
+		<button type="button" id="btnOk" class="margin1">회원가입</button>
 	</form>
 	<script type="text/javascript">
 		var dup=0;
