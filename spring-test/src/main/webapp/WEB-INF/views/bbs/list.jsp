@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/bootstrap.css">
 </head>
 <body>
+	<c:if test="${user != null}">
+		<a href="<%=request.getContextPath()%>/signout">로그아웃</a>
+	</c:if>
+	<c:if test="${user == null}">
+		<a href="<%=request.getContextPath()%>/">로그인</a>
+	</c:if>
 	<table class="table">
 		<tr>
 			<td>번호</td>

@@ -13,7 +13,7 @@
 	<!-- jsp에서 서버로 보낼 때 form태그 사용   -->
 	<form action="<%= request.getContextPath()%>/" method="post" 
 	 	  style="<c:if test="${user != null}">display:none;</c:if>">
-		<input type-"text" name="id"><br>
+		<input type="text" name="id"><br>
 		<input type="password" name="pw"><br>
 		<button type="submit" class="btn btn-primary">로그인</button>
 	</form>
