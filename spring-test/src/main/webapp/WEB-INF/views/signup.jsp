@@ -39,9 +39,9 @@
 	        	type: 'POST',
 	        	data:id,
 	            url: '/springTest/signup/dup',
-	            dataType: 'json',
+	            dataType: 'json', /* pom.xml에 의존성 추가 */
 	            contentType:"application/json; charset=UTF-8",
-	            success: function(data) {
+	            success: function(data) { // data는 서버에서 받은 데이터 
 	                if(data.dup){
 	                	dup = 1;
 	                    alert("id 중복");
