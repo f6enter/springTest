@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/bootstrap.css">
 </head>
 <body>
+
 <h1>
 	Hello world!  
 </h1>
