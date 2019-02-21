@@ -1,5 +1,6 @@
 package kr.green.springtest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.green.springtest.pagenation.Criteria;
+import kr.green.springtest.pagenation.PageMaker;
 import kr.green.springtest.service.BoardService;
 import kr.green.springtest.vo.AccountVo;
 import kr.green.springtest.vo.BoardVo;
@@ -20,10 +23,19 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
-	@RequestMapping(value="/bbs/list")
-	public String list(Model model) {
-		List<BoardVo> list = boardService.getBoards();
-		model.addAttribute("list",list);
+	@RequestMapping(value="/bbs/list", method=RequestMethod.GET)
+	public String list(Model model, HttpServletRequest request, Criteria cri) {
+//		List<BoardVo> list = boardService.getBoards();
+//		model.addAttribute("list",list);
+		
+		 /*페이징처리*/
+	    PageMaker pageMaker = boardService.getPageMaker(cri,5); //블록의 갯수 5개로처리
+	    List<BoardVo> list = boardService.getBoardp(cri);
+	    model.addAttribute("cri", cri);
+	    model.addAttribute("list", list);
+	    model.addAttribute("pageMaker", pageMaker);
+
+		
 		return "bbs/list";
 	}
 	
@@ -87,4 +99,5 @@ public class BoardController {
 		model.addAttribute("id", board.getId());
 		return "redirect:/bbs/detail";
 	}
+	
 }
