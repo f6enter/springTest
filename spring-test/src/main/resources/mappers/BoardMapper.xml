@@ -24,6 +24,15 @@
   
   <select id="getBoardLists" resultType="kr.green.springtest.vo.BoardVo"> <!-- 페이징처리시필요. -->
     select * from board
+        <if test="cri.type==0">
+    	where id like concat('%',#{cri.search},'%')
+    </if>
+    <if test="cri.type==1">
+    	where title like concat('%',#{cri.search},'%')
+    </if>
+    <if test="cri.type==2">
+    	where content like concat('%',#{cri.search},'%')
+    </if>
       order by id desc limit #{cri.startPage},#{cri.perPagenum};
   </select>
 	
